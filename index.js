@@ -47,11 +47,21 @@ let result = "";
 function addValue() {
   let userEmail = inputEemail.value;
   let userPass = inputPass.value;
-  return (result = `Your email: ${userEmail};
+  if (
+    userEmail === null ||
+    userEmail === "" ||
+    userEmail === " " ||
+    userPass === null ||
+    userPass === "" ||
+    userPass === " "
+  ) {
+    return (result = "You have not entered any data");
+  } else {
+    return (result = `Your email: ${userEmail};
   Your password: ${userPass}`);
+  }
 }
 function showResult() {
-  console.log(result);
   alert(result);
 }
 function clearInput() {
@@ -131,10 +141,13 @@ function toggleDotsActiveClass() {
     navDots[2].classList.remove("glr-nav-active");
   }
 }
+
 if (body.clientWidth > 767) {
   count = 0;
+  navDots[1].classList.add("glr-nav-active");
 } else {
   count = 1;
+  navDots[0].classList.add("glr-nav-active");
 }
 
 function sliderStyle() {
@@ -143,7 +156,6 @@ function sliderStyle() {
 
 function leftScroll() {
   count++;
-  console.log(count, body.clientWidth);
   count <= 1 ? sliderStyle() : (count = -1);
   toggleDotsActiveClass();
   sliderStyle();
@@ -151,7 +163,6 @@ function leftScroll() {
 
 function rightScroll() {
   count--;
-  console.log(count, body.clientWidth);
   count >= -1 ? sliderStyle() : (count = 1);
   toggleDotsActiveClass();
   sliderStyle();
@@ -163,22 +174,10 @@ sliderLeftArrow.addEventListener("click", () => {
 sliderRightArrow.addEventListener("click", () => {
   rightScroll();
 });
+
 // hero
 const searchBtn = document.querySelector(".btn-search");
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  alert("Sorry, is not work`s now.");
+  alert("Sorry, it is not working right now.");
 });
-
-let selfCheck = `Travel3 selfCheck:
-
-Ваша оценка - 115 баллов
-
-Отзыв по пунктам ТЗ:
-
-Частично выполненные пункты:
-
-1) на десктоп варианте при клике на урезанную картинку слева или справа изображение меняется по принципу карусели(например если нажать правую картинку та что была в центре на уезжает налево, а та что была видна наполовину оказывается справа)
-
-Отзыв: если нажать правую картинку та что была в центре на уезжает налево, а та что была видна наполовину НЕ оказывается справа`;
-console.log(selfCheck);
