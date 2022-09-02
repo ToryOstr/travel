@@ -1,0 +1,1 @@
+This is an educational project during the pre-course in The Rolling Scopes School
