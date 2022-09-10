@@ -12,6 +12,7 @@ function toggleBurgerClassList() {
   nav.classList.toggle("open-burger");
   burger.classList.toggle("open-burger");
 }
+
 btnBurger.addEventListener("click", (e) => {
   e.preventDefault();
   toggleBurgerClassList();
@@ -29,6 +30,7 @@ closeBurger.addEventListener("click", (e) => {
   e.preventDefault();
   toggleBurgerClassList();
 });
+
 // pop-up
 const popup = document.querySelector(".popup-area");
 const registration = document.querySelector(".registration-btn");
@@ -177,6 +179,7 @@ sliderRightArrow.addEventListener("click", () => {
 
 // hero
 const searchBtn = document.querySelector(".btn-search");
+
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
   alert("Sorry, it is not working right now.");
